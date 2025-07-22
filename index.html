@@ -5,21 +5,23 @@
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-        <input id="image_input" type="file" accept="image/*"><br>
-        <canvas id="preview_canvas"></canvas><br>
-        <input type="button" value="Export" id="export_button">
+        <div id="main_div">
+            <h1 id="heading">img2xl</h1>
+            <input id="image_input" type="file" accept="image/*"><br>
+            <canvas id="preview_canvas"></canvas><br>
+            <input type="button" value="Export as XLSX" id="export_button">
+        </div>
         
         <script type="module">
             import ExcelJS from 'https://cdn.skypack.dev/exceljs';
 
-            function componentToHex(c) {
-                var hex = c.toString(16);
-                return hex.length == 1 ? "0" + hex : hex;
-            }
-
             function pixelToHex(pixel) {
-                const a = pixel[3], r = pixel[0], g = pixel[1], b = pixel[2];
-                return (componentToHex(a) + componentToHex(r) + componentToHex(g) + componentToHex(b)).toUpperCase();
+                return (
+                    pixel[3].toString(16).padStart(2, "0") +
+                    pixel[0].toString(16).padStart(2, "0") +
+                    pixel[1].toString(16).padStart(2, "0") +
+                    pixel[2].toString(16).padStart(2, "0")
+                ).toUpperCase();
             }
 
             function removeExtension(file_name) {
@@ -47,8 +49,7 @@
                     image_object.onload = async function() {
                         const workbook = new ExcelJS.Workbook();
                         const worksheet = workbook.addWorksheet('Sheet1');
-                        worksheet.properties.defaultColWidth = 1.45;
-                        worksheet.properties.defaultRowHeight = 7.5;
+                        worksheet.properties.defaultColWidth = 2.9;
 
                         const canvas_height = 300;
                         const canvas_width = Math.floor((canvas_height / image_object.height) * image_object.width);
