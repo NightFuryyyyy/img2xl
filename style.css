@@ -1,3 +1,37 @@
+body {
+    font-family: monospace;
+    background-color: #1f1f1f;
+    color: #E0E0E0;
+}
+
+#image_input {
+    margin-bottom: 10px;
+}
+
+#heading {
+    text-align: center;
+}
+
+#export_button {
+    display: block;
+    height: 30px;
+    background-color: #eeeeee;
+    color: #202020;
+    border: none;
+    border-radius: 10px;
+    padding: 0px 10px;
+    margin: 0 auto;
+}
+
+#main_div {
+    width: fit-content;
+    margin: 0 auto;
+}
+
 #preview_canvas {
-    height: 250px;
+    max-height: 250px;
+    min-width: 250px;
+    max-width: 100%;
+    background-color: #E0E0E0;
+    margin-bottom: 10px;
 }
