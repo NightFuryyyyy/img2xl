@@ -67,6 +67,12 @@
                                 };
                             }
                         }
+                        const final_cell = worksheet.getCell(canvas_height, canvas_width);
+                        const final_pixel = canvas_context.getImageData(canvas_width - 1, canvas_height - 1, 1, 1).data;
+                        final_cell.value = 1;
+                        final_cell.font = {
+                            color: { argb: pixelToHex(final_pixel) }
+                        };
 
                         export_button.onclick = async function() {
                             const buffer = await workbook.xlsx.writeBuffer();
