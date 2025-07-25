@@ -28,9 +28,9 @@
                 return file_name.slice(0, file_name.lastIndexOf("."));
             }
 
-            const image_input = document.getElementById("image_input");
-            const preview_canvas = document.getElementById("preview_canvas");
-            const export_button = document.getElementById("export_button");
+            const image_input = document.querySelector(".image_input");
+            const preview_canvas = document.querySelector(".preview_canvas");
+            const export_button = document.querySelector(".export_button");
 
             const canvas_context = preview_canvas.getContext("2d");
 
