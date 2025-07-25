@@ -8,6 +8,15 @@ body {
     margin-bottom: 10px;
 }
 
+#image_input::file-selector-button {
+    height: 30px;
+    background-color: #eeeeee;
+    color: #202020;
+    border: none;
+    border-radius: 10px;
+    padding: 0px 10px;
+}
+
 #heading {
     text-align: center;
 }
@@ -24,14 +33,13 @@ body {
 }
 
 #main_div {
-    width: fit-content;
+    width: 90vw;
+    max-width: 600px;
     margin: 0 auto;
 }
 
 #preview_canvas {
-    max-height: 250px;
-    min-width: 250px;
-    max-width: 100%;
+    width: 100%;
     background-color: #E0E0E0;
     margin-bottom: 10px;
 }
