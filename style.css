@@ -1,45 +1,45 @@
 body {
     font-family: monospace;
     background-color: #1f1f1f;
-    color: #E0E0E0;
+    color: #e0e0e0;
 }
 
-#image_input {
+.image_input {
     margin-bottom: 10px;
 }
 
-#image_input::file-selector-button {
+.image_input::file-selector-button {
     height: 30px;
-    background-color: #eeeeee;
-    color: #202020;
+    background-color: #e0e0e0;
+    color: #1f1f1f;
     border: none;
     border-radius: 10px;
     padding: 0px 10px;
 }
 
-#heading {
+.heading {
     text-align: center;
 }
 
-#export_button {
+.export_button {
     display: block;
     height: 30px;
-    background-color: #eeeeee;
-    color: #202020;
+    background-color: #e0e0e0;
+    color: #1f1f1f;
     border: none;
     border-radius: 10px;
     padding: 0px 10px;
     margin: 0 auto;
 }
 
-#main_div {
+.main_div {
     width: 90vw;
     max-width: 600px;
     margin: 0 auto;
 }
 
-#preview_canvas {
+.preview_canvas {
     width: 100%;
-    background-color: #E0E0E0;
+    background-color: #e0e0e0;
     margin-bottom: 10px;
 }
