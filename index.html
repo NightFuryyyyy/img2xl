@@ -35,13 +35,13 @@
             const canvas_context = preview_canvas.getContext("2d");
 
             image_input.onchange = () => {
-                const reader = new FileReader();
-
                 const image_file = image_input.files[0];
                 if(!image_file) {
                     alert('Please upload an image.');
                     return;
                 }
+
+                const reader = new FileReader();
 
                 reader.onload = event => {
                     const image_object = new Image();
