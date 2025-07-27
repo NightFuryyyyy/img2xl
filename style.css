@@ -6,11 +6,12 @@ body {
 
 .image_input {
     margin-bottom: 10px;
+    font-family: inherit;
 }
 
 .image_input::file-selector-button {
     height: 30px;
-    font-family: monospace;
+    font-family: inherit;
     background-color: #e0e0e0;
     color: #1f1f1f;
     border: none;
