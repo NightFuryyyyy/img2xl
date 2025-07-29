@@ -34,8 +34,16 @@ image_input.onchange = () => {
             const worksheet = workbook.addWorksheet('Sheet1');
             worksheet.properties.defaultColWidth = 2.9;
 
-            const canvas_height = 300;
-            const canvas_width = Math.floor((canvas_height / image_object.height) * image_object.width);
+            let canvas_height = image_object.height;
+            let canvas_width = image_object.width;
+            if (canvas_width > 854) {
+                canvas_width = 854;
+                canvas_height = Math.floor((canvas_width / image_object.width) * image_object.height);
+            }
+            if (canvas_height > 480) {
+                canvas_height = 480;
+                canvas_width = Math.floor((canvas_height / image_object.height) * image_object.width);
+            }
             preview_canvas.height = canvas_height;
             preview_canvas.width = canvas_width;
             canvas_context.drawImage(image_object, 0, 0, canvas_width, canvas_height);
